@@ -3,48 +3,36 @@ package main;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 
 public class NumberCheck {
 
 	public static void main(String[] args) {
-		// Declare Array of Numbers to Be Checked
+		
+        // Declare Array of Numbers to Be Checked
+        Integer[] temp = {1, 3, 5, 7, 9, 11, 13, 15};
 
-		Integer[] temp = {1, 3, 5, 7, 9, 11, 13, 15};
-		
-		ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(temp));
-		
-		//Reverse the list
-		Collections.sort(numbers, Collections.reverseOrder());
-		
-		//TODO Create Algorithm
-		
-		int $ideal_result = 30;
-		
-		int $curr_result = 0;
-		
-		for (int i = 0; i < numbers.size(); i++)
-		{
-			for (int j = i + 1; j < numbers.size(); j++) {
-				
-				for (int k = i + 1; k < numbers.size(); k++) {
-					$curr_result = numbers.get(i) + numbers.get(j) + numbers.get(k);
-					
-					System.out.println("Result:" + $curr_result);
-					
-					if($curr_result == $ideal_result) {
-						
-						break;
-						
-					}
-					
-				}
-				
-			}
-	
-			//System.out.println(numbers.get(i));
-		}
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(temp));
 
-		//System.out.println("Hello World");
+        //This randomly picks any number in the arraylist as opposed to moving index by index
+        Random rand = new Random(numbers.size());
+
+        //TODO Create Algorithm
+        int curr_result = 0;
+
+        while (true) {
+
+            curr_result = numbers.get(rand.nextInt(numbers.size()))
+                    + numbers.get(rand.nextInt(numbers.size()))
+                    + numbers.get(rand.nextInt(numbers.size()));
+
+            if (curr_result == 30) {
+                break;
+            }
+
+            System.out.println("!The answer is: " + curr_result);
+
+        }
 
 	}
 
