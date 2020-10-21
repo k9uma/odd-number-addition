@@ -1,0 +1,24 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class NumberCheck {
+
+	public static void main(String[] args) {
+
+      int i,j;
+      int oddnumsum=0;
+      int arr= {1,4,2,6,3,5,8}
+      for(i=0;i<arr.size();i++)
+      {
+             if(arr[i]%2!=0)
+             {
+                 oddnumsum=oddnumsum+arr[i];
+             }
+      }
+      System.out.println(oddnumsum);
+
+
+		}
